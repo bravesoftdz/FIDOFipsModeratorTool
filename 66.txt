@@ -1,0 +1,31 @@
+moderat.setpos
+
+1512
+329
+modlist.Cells[1,modlist.row];
+
+исправлен баг с неотображением текста писем при просмотре
+исправлен баг с сортировкой
+2219
+
+tmpstr:=tstringlist.create;
+	if fileexists(edit1.text) then tmpstr.loadfromfile(edit1.text);
+	moderat.addtext(tmpstr);
+	tmpstr.free;
+
+пересохранение
+2224
+
+var	tmpstr:TStringList;
+moderat.setpos(modlist.row);
+moderat.gettext(tmpstr);
+
+-------------------------------------
+
+If CheckBox4.Checked then
+Begin
+	tmpstr:=tstringlist.create;
+	if fileexists(edit1.text) then tmpstr.loadfromfile(edit1.text);
+	moderat.addtext(tmpstr);
+	tmpstr.free;
+End;
